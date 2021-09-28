@@ -99,6 +99,7 @@ button {
   color: var(--color-white);
   padding: 16px;
   transition: all var(--animation-duration) ease-in-out;
+  z-index: 1;
 }
 #navbar.navbar--dark {
   background-color:var(--color-pink);
@@ -117,6 +118,7 @@ button {
   margin: 0 4px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
+ 
 }
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
@@ -228,6 +230,7 @@ button {
 /*Skills*/
 #skills{
   background-color: var(--color-yellow);
+
 }
 .skillset {
   display: flex;
