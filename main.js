@@ -38,7 +38,18 @@ navbarMenu.addEventListener('click',(event)=>{
     if(link == null){
         return;
     }
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link)
-    scrollTo.scrollIntoView({behavior:"smooth"});
+    scrollIntoView(link)
 })
+
+//Home contact me button click scrolling
+//my code
+const contactBtn = document.querySelector('.home__contact');
+contactBtn.addEventListener('click', ()=>{
+    scrollIntoView('#contact')
+});
+// same with teacher's code ><
+// 코드 간결하게 만들기
+function scrollIntoView(selector){
+    const contact = document.querySelector(selector);
+    contact.scrollIntoView({behavior : "smooth"});
+}
