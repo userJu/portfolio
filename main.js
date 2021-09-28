@@ -48,7 +48,24 @@ contactBtn.addEventListener('click', ()=>{
     scrollIntoView('#contact')
 });
 // same with teacher's code ><
+
+
+
+//scrolling home become transparent
+//my code
+
+//home 높이를 알고 그 높이가되면 투명해지기
+//scroll event 사용하기
+
+const home = document.querySelector('.home__container')
+const homeHeight = home.getBoundingClientRect().height
+document.addEventListener('scroll', ()=>{
+    home.style.opacity=1-(window.scrollY / homeHeight)
+})
+
+
 // 코드 간결하게 만들기
+//유틸리티 함수는 맨 밑으로
 function scrollIntoView(selector){
     const contact = document.querySelector(selector);
     contact.scrollIntoView({behavior : "smooth"});
