@@ -416,6 +416,27 @@ button {
   color: var(--color-yellow);
 }
 
+/* ArrowBtn */
+.arrow-up {
+  color: var(--color-white);
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  font-size: 50px;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) ease-in;
+}
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {

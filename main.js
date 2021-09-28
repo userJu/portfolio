@@ -63,6 +63,23 @@ document.addEventListener('scroll', ()=>{
     home.style.opacity=1-(window.scrollY / homeHeight)
 })
 
+//Arrow up Btn
+const arrowUp = document.querySelector('.arrow-up')
+document.addEventListener('scroll',()=>{
+    if(window.scrollY > homeHeight / 2){
+        arrowUp.classList.add('visible')
+    } else{
+        arrowUp.classList.remove('visible')
+    }
+})
+arrowUp.addEventListener('click', ()=>{
+    scrollIntoView('#home')
+})
+
+
+
+
+
 
 // 코드 간결하게 만들기
 //유틸리티 함수는 맨 밑으로
@@ -70,3 +87,5 @@ function scrollIntoView(selector){
     const contact = document.querySelector(selector);
     contact.scrollIntoView({behavior : "smooth"});
 }
+
+
