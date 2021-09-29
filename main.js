@@ -76,7 +76,32 @@ arrowUp.addEventListener('click', ()=>{
     scrollIntoView('#home')
 })
 
+//work category click event
+const workBtnContainer = document.querySelector('.work__categories')
+const projectContainer = document.querySelector('.work__projects')
+const projects = document.querySelectorAll('.project')
 
+
+workBtnContainer.addEventListener('click', (event)=>{
+    const filter = event.target.dataset.name || event.target.parentNode.dataset.name;
+    if(filter ==null){
+        return;
+    }
+    projectContainer.classList.add('anim-out')
+    setTimeout(()=>{
+        projects.forEach((project)=>{
+            console.log(project.dataset.work)
+            if(filter === '*' || filter === project.dataset.work){
+                project.classList.remove('invisible')
+            } else{
+                project.classList.add('invisible')
+            }
+        })
+    projectContainer.classList.remove('anim-out')
+    },300)
+
+
+})
 
 
 
