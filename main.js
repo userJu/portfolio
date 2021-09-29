@@ -13,6 +13,7 @@ document.addEventListener('scroll',() => {
     }
 })
 
+
 // // Navbar의 item을 클릭하면 원하는 곳으로 스크롤 되는 이벤트
 
 // My code
@@ -40,6 +41,10 @@ navbarMenu.addEventListener('click',(event)=>{
     }
     scrollIntoView(link)
 })
+
+
+
+
 
 //Home contact me button click scrolling
 //my code
@@ -87,6 +92,16 @@ workBtnContainer.addEventListener('click', (event)=>{
     if(filter ==null){
         return;
     }
+
+    //Remove selection from the previous item and select the new one
+    const active=document.querySelector('.category__btn.selected')
+    active.classList.remove('selected');
+    const target = event.target.nodeName === "BUTTON" ? event.target :
+                                event.target.parentNode;
+    // 이 문장에 의해서 target에는 항상 button만 할당됨
+
+    target.classList.add('selected');
+
     projectContainer.classList.add('anim-out')
     setTimeout(()=>{
         projects.forEach((project)=>{
