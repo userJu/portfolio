@@ -14,6 +14,7 @@ document.addEventListener('scroll',() => {
 })
 
 
+
 // // Navbar의 item을 클릭하면 원하는 곳으로 스크롤 되는 이벤트
 
 // My code
@@ -39,8 +40,22 @@ navbarMenu.addEventListener('click',(event)=>{
     if(link == null){
         return;
     }
+    navbarMenu.classList.remove('active')
     scrollIntoView(link)
 })
+
+// Navbar Toggle button active
+const toggleBtn = document.querySelector('.navbar__toggle-btn')
+
+toggleBtn.addEventListener('click',()=>{
+    const result = toggleBtn.classList.toggle("toggle");
+    if(result){
+        navbarMenu.classList.add('active')
+    } else{
+        navbarMenu.classList.remove('active')
+    }
+})
+
 
 
 
