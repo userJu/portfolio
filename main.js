@@ -137,12 +137,7 @@ workBtnContainer.addEventListener('click', (event)=>{
 
 
 
-// 코드 간결하게 만들기
-//유틸리티 함수는 맨 밑으로
-function scrollIntoView(selector){
-    const contact = document.querySelector(selector);
-    contact.scrollIntoView({behavior : "smooth"});
-}
+
 
 // 1. 모든 섹션 요소들을 가지고 온다
 // 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
@@ -159,6 +154,15 @@ function selectNavItem(selected){
     selectedNavItem = selected;
     selectedNavItem.classList.add('active')
 }
+
+// 코드 간결하게 만들기
+//유틸리티 함수는 맨 밑으로
+function scrollIntoView(selector){
+    const contact = document.querySelector(selector);
+    contact.scrollIntoView({behavior : "smooth"});
+    selectNavItem(navItems(navItems.indexOf(selector)))    
+}
+
 const observerOptions = {
     root:null,
     rootMargin:'0px',
